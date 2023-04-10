@@ -46,6 +46,7 @@ const Navbar = () => {
             : { ...item, current: false }
         )
       );
+      dispatch(changeMenu('Home'))
     } else if (location.pathname === '/Dashboard') {
       setNavigation(
         navigation.map((item) =>
@@ -61,7 +62,8 @@ const Navbar = () => {
             ? { ...item, current: true }
             : { ...item, current: false }
         )
-      )
+      );
+      dispatch(changeMenu('Sobre'))
     } else if (location.pathname === '/Carteiras') {
       setNavigation(
         navigation.map((item) =>
@@ -69,7 +71,8 @@ const Navbar = () => {
             ? { ...item, current: true }
             : { ...item, current: false }
         )
-      )
+      );
+      dispatch(changeMenu('Carteiras'))
     } else if (location.pathname === '/Calendario') {
       setNavigation(
         navigation.map((item) =>
@@ -77,7 +80,8 @@ const Navbar = () => {
             ? { ...item, current: true }
             : { ...item, current: false }
         )
-      )
+      );
+      dispatch(changeMenu('Calendario'))
     } else if (location.pathname === '/Reports') {
       setNavigation(
         navigation.map((item) =>
@@ -85,7 +89,8 @@ const Navbar = () => {
             ? { ...item, current: true }
             : { ...item, current: false }
         )
-      )
+      );
+      dispatch(changeMenu('Reports'))
     }
   }, [location.pathname]);
 

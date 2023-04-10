@@ -18,7 +18,7 @@ const DashboardHeader = () => {
   const [estado, setEstado] = useState(null);
 
   useEffect(() => {
-
+    console.log(location.pathname)
     if (location.pathname === '/Dashboard/DashboardManutencao') {
       setNavigation(
         navigation.map((item) =>
@@ -27,6 +27,7 @@ const DashboardHeader = () => {
             : { ...item, current: false }
         )
       );
+      dispatch(changeMenuDash('Programação da Manutenção'))
     } else if (location.pathname === '/Dashboard/DashboardDesligamentos') {
       setNavigation(
         navigation.map((item) =>
@@ -34,15 +35,8 @@ const DashboardHeader = () => {
             ? { ...item, current: true }
             : { ...item, current: false }
         )
-      )
-    } else if (location.pathname === '/Sobre') {
-      setNavigation(
-        navigation.map((item) =>
-          item.name === 'Sobre'
-            ? { ...item, current: true }
-            : { ...item, current: false }
-        )
-      )
+      );
+      dispatch(changeMenuDash('Desligamentos Programados'))
     }
   }, [location.pathname]);
 
